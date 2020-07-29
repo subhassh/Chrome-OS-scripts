@@ -10,9 +10,8 @@ sudo apt-get install gparted
 sudo apt-get install grub-customizer
 sudo gparted
 sudo figlet -c "SUBSCRIBE TO"
-sudo figlet -c Kedar
-sudo figlet -c Nimbalkar
-sudo echo https://www.youtube.com/user/kedar123456889
+sudo figlet -c subhassh
+sudo echo https://www.youtube.com/channel/UCzHZluJUTXbedyhscSyRL6w
 echo "Please enter partition name for Chrome OS multi boot install. For e.g. sda5";
 read partition
 sudo sfdisk -l /dev/$partition
@@ -23,7 +22,7 @@ while true; do
         [Yy]* ) echo "Ok, Proceeding installation on $partition";
                 mkdir -p ~/tmpmount;
                 sudo mount /dev/$partition ~/tmpmount;
-                sudo bash chromeos-install.sh -src samus_recovery.bin -dst ~/tmpmount/chromos.img -s $size;
+                sudo bash chromeos-install.sh -l -src samus_recovery.bin -dst ~/tmpmount/chromos.img -s $size;
                 sudo umount ~/tmpmount;
 				echo "Copy the above grub menu entry in grub customizer";
                 sudo grub-customizer;
